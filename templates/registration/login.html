@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Login | Controle de Chaves{% endblock %}
+
+{% block loginstyles %}<link rel="stylesheet" href="{% static 'css/login.css' %}">{% endblock %}
+
+{% block content %}
+<div class="container-login">
+    <h1>Entrar</h1>
+    <form method="post" action="">
+        {% csrf_token %}
+        <div class="txt-field">
+            <input type="text" name="username" required>
+            <span></span>
+            <label>Usuário</label>
+        </div>
+        <div class="txt-field">
+            <input type="password" name="password" required>
+            <span></span>
+            <label>Senha</label>
+        </div>
+        <input type="submit" value="Entrar">
+        <div class="inv"></div>
+    </form>
+</div>
+{% endblock %}
